@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+
+{% block head%}
+<title>supplier</title>
+
+{% endblock %}
+
+{% block body %}
+<hr>
+<form action='/suppliers' method='POST'>
+    <br>
+    Email: 
+    <input  type="text" name="email" id="Email" placeholder="Enter Email" >
+    <br>
+    Password: 
+    <input type="password" name="password" id="password" placeholder="Enter Password" aria-label="Enter Password">
+    <br>
+    First Name: 
+    <input  type="text" name="first_name" id="First Name" placeholder="Enter First" aria-label="Enter First">
+    <br>
+    Last Name: 
+    <input  type="text" name="last_name" id="Last Name" placeholder="Enter Last" aria-label="Enter Last">
+    <br>
+    Mobile: 
+    <input type="text" name="u_mobile" id="Mobile" placeholder="Enter Mobile" aria-label="Enter Mobile" >
+    <br>
+    Gender: 
+    <input type="radio" name="u_gender" id="u_gender" >Male
+    <input type="radio" name="u_gender" id="   u _gender" > Female
+    <br>
+    Address: 
+    <label for=address>Address</label>
+   
+    <textarea class="form-control" name="u_address" id="u_address" rows="3"></textarea>
+  </div>
+    <br>
+
+
+    <input type='submit' value='post'>
+
+</form>
+<hr>
+
+
+<h2> list of all suppliers </h2>
+{% for suppliers in suppliers %}
+<h2>{{suppliers.email}}</h2>
+{{suppliers.Password}}
+{{suppliers.first_name}}
+{{suppliers.last_name}}
+{{suppliers.Mobile}}
+{% endfor %}
+
+
+
+{% endblock %}
